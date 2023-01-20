@@ -2,9 +2,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import {useAddTodosMutation, useGetTodosQuery} from "../api/todo-slice"
 
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
+  const {data, isLoading, isSuccess, isError, error} = useGetTodoQuery();
+  useAddTodosMutation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
