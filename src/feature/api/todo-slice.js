@@ -2,11 +2,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const apiSlice = createApi({
     reducerPath: 'api',
-    baseQuery: fetchBaseQuery(baseUrl: ), 
+    baseQuery: fetchBaseQuery({baseUrl: "http://localhost:3004/todos"}), 
+    
     endpoints: (builder) => ({
         // GET
         getTodos: builder.query({
-            query: () => '/todos',
+            query: () => "/todos",
         }),
         // POST
         addTodos: builder.mutation({
